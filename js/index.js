@@ -1,12 +1,12 @@
-const form = document.getElementById("github-form")
-form.addEventListener("submit", handleSubmit)
+const doc = document.getElementById("github-form")
+doc.addEventListener("submit", handleSubmit)
 function handleSubmit(event){
   event.preventDefault()
   const inputValue = event.target.search.value
  
-  getUser(inputValue)
+  gettingUser(inputValue)
 }
-function getUser(inputValue){
+function gettingUser(inputValue){
   fetch(`https://api.github.com/search/users?q=${inputValue}`)
   .then(res => res.json())
   .then(data => {
